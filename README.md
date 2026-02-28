@@ -33,6 +33,10 @@ It wrote the code, ran away, and now the game is unplayable.
 
 - [ ] [Insert a screenshot of your fixed, winning game here]
 
+![Go Lower](<Screenshots/Go Lower.png>)
+![Go Higher](<Screenshots/Go Higher.png>)
+![Wining](<Screenshots/Winning Screenshot 1.png>)
+
 ## 🚀 Stretch Features
 
 - [ ] [If you choose to complete Challenge 4, insert a screenshot of your Enhanced Game UI here]
