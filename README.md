@@ -1,4 +1,8 @@
 # 🎮 Game Glitch Investigator: The Impossible Guesser
+## TF Weekly Task 2
+
+The core concept students needed to understand is how to troubleshoot AI generated code until you achieve what you need. Students are most likely to struggle with importing the functions from the `logic_utils.py` after moving them because there is no `__init__.py` file for the module. The AI took a long time trying to figure it out. The AI also wasn’t helpful in running the tests by itself. It kept having issues with the test not found as it wasn’t using my environment. One way I would guide a student without giving the answer is to encourage them to think about what they are trying to solve compared to what is currently happening with the code.  
+
 
 ## 🚨 The Situation
 
