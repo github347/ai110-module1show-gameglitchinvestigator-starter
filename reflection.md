@@ -12,6 +12,18 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   - New Game aslo doesn't let you continue playing after winning a game. Expected a a new game to start.
   - There is a discrepancy between the "Guess a number between 1 and 100. Attempts left: 6" and the Setting showing a different range and the new game creating a new secret number out of range. Expected to have the same range and limit be applied properly.
   - Changing the difficulty did not change the secret number. It should be change to avoid being out of range. 
+- List at least two concrete bugs you noticed at the start  
+  (for example: "the hints were backwards").
+
+**Bug Reproduction Log**
+
+Document at least 3 bugs you found. Add rows as needed.
+
+| Input | Expected Behavior | Actual Behavior | Console Output / Error |
+|-------|-------------------|-----------------|------------------------|
+| | | | |
+| | | | |
+| | | | |
 
 ---
 
@@ -47,6 +59,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 - What change did you make that finally gave the game a stable secret number?
   - I kept the same if the difficulty was not changed.
+- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
 ---
 
