@@ -33,6 +33,7 @@ if "prev_difficulty" not in st.session_state:
     st.session_state.prev_difficulty = difficulty
 
 # whenever the user chooses a new difficulty we need to start a fresh game
+# FIX: Fix for the case where the user changes difficulty mid-game.
 if st.session_state.prev_difficulty != difficulty:
     st.session_state.prev_difficulty = difficulty
     st.session_state.secret = random.randint(low, high)
@@ -101,7 +102,9 @@ with col2:
 
 if new_game:
     st.session_state.attempts = 0
-    # regenerate secret using the current difficulty bounds
+    # regenerate secret using the current difficulty bounds.
+    # FIX: Fix for user clicking "New Game" after changing difficulty, 
+    # which would start a new game but keep the old difficulty range.
     st.session_state.secret = random.randint(low, high)
     st.session_state.status = "playing"
     st.session_state.history = []
@@ -127,12 +130,15 @@ if submit:
     else:
         st.session_state.history.append(guess_int)
 
-        if st.session_state.attempts % 2 == 0:
-            secret = str(st.session_state.secret)
-        else:
-            secret = st.session_state.secret
+        # FIX: The "glitch" where every other attempt would compare 
+        # the secret as a string instead of an int, which would flip the hint directions.
+        # HINT: I would ask student should the order/position of
+        #  guess have any effect on the secret comparaison and the hint messages.
 
-        outcome, message = check_guess(guess_int, secret)
+        # if st.session_state.attempts % 2 == 0:
+        #     secret = str(st.session_state.secret)
+
+        outcome, message = check_guess(guess_int, st.session_state.secret)
 
         if show_hint:
             st.warning(message)

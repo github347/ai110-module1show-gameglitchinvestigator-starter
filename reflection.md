@@ -5,15 +5,16 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 ## 1. What was broken when you started?
 
 - What did the game look like the first time you ran it?
-- List at least two concrete bugs you noticed at the start (for example: "the secret number kept changing" or "the hints were backwards").
-
-  - The hint keep saying "Go Higher" even while my input was 99 or 100 and the range is supposedbe between 1 and 100. Should have been "Go LOWER" instead.
-  - Clicking "New Game" doesn't remove the Game over message. Expected a new game to start and clear the error message.
-  - New Game aslo doesn't let you continue playing after winning a game. Expected a a new game to start.
-  - There is a discrepancy between the "Guess a number between 1 and 100. Attempts left: 6" and the Setting showing a different range and the new game creating a new secret number out of range. Expected to have the same range and limit be applied properly.
-  - Changing the difficulty did not change the secret number. It should be change to avoid being out of range. 
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
+
+  - The hint keep saying "Go Higher" even while my input was 99 or 100 and the range is supposed be between 1 and 100. Should have been "Go LOWER" instead.
+  - Clicking "New Game" doesn't remove the Game over message. Expected a new game to start and clear the error message.
+  - New Game also doesn't let you continue playing after winning a game. Expected a new game to start.
+  - There is a discrepancy between the "Guess a number between 1 and 100. Attempts left: 6" and the Setting showing a different range and the new game creating a new secret number out of range. Expected to have the same range and limit be applied properly.
+  - Changing the difficulty did not change the secret number. It should be change to avoid being out of range. 
+
+
 
 **Bug Reproduction Log**
 
@@ -21,8 +22,10 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
+|Guess of 34| Hint to say go Lower| Go HIGHER! is shown| none |
+|Clicking "New Game" after game over | Reset of UIs, hints and error messages| "Game over. Start a new game to try again." is shown| none|
+|Clicking "New Game" after game over |Able to Start a new guessing game |Secret number is reset but can not submit new guess numbers | none|
+|Changing Difficulty and clicking New Game | New secret number to be between expected range based on difficutly level| New secret numbers are out of range for the expected difficulty, e.g. Secret = 90 for Easy range (1,20), Secret = 68 for Difficult range (1,50),| none|
 | | | | |
 
 ---
@@ -35,7 +38,7 @@ Document at least 3 bugs you found. Add rows as needed.
     - It was about the text for going higher and lower. I parse the first part and asked the AI for help and the answer also caught a second part fallback where it happened again before I realized that.
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
   - Not incorect per se but it failed to copy the 📉 emoji in the answer.
-  - Was having issue with the imports to to run the pytest as there was no "__init__.py" file to make modules.
+  - Was having issue with the imports to run the pytest as there was no "__init__.py" file to make modules.
 
 ---
 
@@ -52,14 +55,11 @@ Document at least 3 bugs you found. Add rows as needed.
 
 ## 4. What did you learn about Streamlit and state?
 
-- In your own words, explain why the secret number kept changing in the original app.
-  - It kept changing because Streamlit keep reruning the app when the dificulty changed.
 - How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
   - Streamlit "reruns" means that on every changes, the entire script is run again. The session state make sure that those values are saved between those rerun so that you can use them again. For example the score, you don't want it to keep resetting to 0 while playing.
 
 - What change did you make that finally gave the game a stable secret number?
   - I kept the same if the difficulty was not changed.
-- How would you explain Streamlit "reruns" and session state to a friend who has never used Streamlit?
 
 ---
 

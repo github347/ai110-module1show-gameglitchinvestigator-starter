@@ -1,11 +1,14 @@
 def get_range_for_difficulty(difficulty: str):
     """Return (low, high) inclusive range for a given difficulty."""
+    # FIX: Change difficulty bounds to reflect difficulty.
+    # HINT: I would ask student: how does the number of possible values affect the dificulty of the games.
+    # e.g how does having 100 possible values compare to having 20 possible values. 
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
-        return 1, 100
-    if difficulty == "Hard":
         return 1, 50
+    if difficulty == "Hard":
+        return 1, 100
     return 1, 100
 
 
@@ -38,7 +41,9 @@ def check_guess(guess, secret):
 
     outcome examples: "Win", "Too High", "Too Low"
     """
-    # FIX: Providing the first error to Copilot help it found the second error and produce a fix.
+    # Providing the first error to Copilot help it found the second error and produce a fix.
+    # FIX: Fixes for hint messages direction being flipped.
+    # HINT: I would tell students how does the order of 'guess' and 'secret' comparaison affect the 'if' flow.
     if guess == secret:
         return "Win", "🎉 Correct!"
 

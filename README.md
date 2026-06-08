@@ -37,25 +37,31 @@ It wrote the code, ran away, and now the game is unplayable.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. Change difficulty bounds to reflect difficulty.
+2. Fixes for hint messages direction being flipped.
+3. Fix for the case where the user changes difficulty mid-game.
+4. Fix for user clicking "New Game" after changing difficulty
+5. Fix the "glitch" where every other attempt would compare the secret as a string instead of an int, which would flip the hint directions.
+6. Fix for new game not starting on user request.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
+![Go Lower](<Screenshots/Go Lower.png>)
+![Go Higher](<Screenshots/Go Higher.png>)
+![Wining](<Screenshots/Winning Screenshot 1.png>)
 
 ## 🧪 Test Results
 
 ```
-# Paste your pytest output here, e.g.:
-# pytest tests/
-# ========================= X passed in 0.XXs =========================
+plugins: cov-7.1.0, anyio-4.13.0
+collected 4 items
+
+tests/test_game_logic.py ....                                            [100%]
+
+============================== 4 passed in 0.01s ===============================
+Finished running tests!
 ```
 
-![Go Lower](<Screenshots/Go Lower.png>)
-![Go Higher](<Screenshots/Go Higher.png>)
-![Wining](<Screenshots/Winning Screenshot 1.png>)
+
 
 ## 🚀 Stretch Features
 
