@@ -15,17 +15,16 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
   - Changing the difficulty did not change the secret number. It should be change to avoid being out of range. 
 
 
-
 **Bug Reproduction Log**
 
 Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
-|-------|-------------------|-----------------|------------------------|
-|Guess of 34| Hint to say go Lower| Go HIGHER! is shown| none |
-|Clicking "New Game" after game over | Reset of UIs, hints and error messages| "Game over. Start a new game to try again." is shown| none|
-|Clicking "New Game" after game over |Able to Start a new guessing game |Secret number is reset but can not submit new guess numbers | none|
-|Changing Difficulty and clicking New Game | New secret number to be between expected range based on difficutly level| New secret numbers are out of range for the expected difficulty, e.g. Secret = 90 for Easy range (1,20), Secret = 68 for Difficult range (1,50),| none|
+| ------- | ------------------- | ----------------- | ------------------------ |
+| Guess of 34 | Hint to say go Lower | Go HIGHER! is shown | none |
+| Clicking "New Game" after game over | Reset of UIs, hints and error messages | "Game over. Start a new game to try again." is shown | none |
+| Clicking "New Game" after game over | Able to Start a new guessing game | Secret number is reset but can not submit new guess numbers | none |
+| Changing Difficulty and clicking New Game | New secret number to be between expected range based on difficutly level | New secret numbers are out of range for the expected difficulty, e.g. Secret = 90 for Easy range (1,20), Secret = 68 for Difficult range (1,50) | none |
 | | | | |
 
 ---
@@ -38,7 +37,7 @@ Document at least 3 bugs you found. Add rows as needed.
     - It was about the text for going higher and lower. I parse the first part and asked the AI for help and the answer also caught a second part fallback where it happened again before I realized that.
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
   - Not incorect per se but it failed to copy the 📉 emoji in the answer.
-  - Was having issue with the imports to run the pytest as there was no "__init__.py" file to make modules.
+  - Was having issue with the imports to run the pytest as there was no "\_\_init__.py" file to make modules.
 
 ---
 

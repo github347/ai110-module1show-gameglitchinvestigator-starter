@@ -70,8 +70,9 @@ def update_score(current_score: int, outcome: str, attempt_number: int):
         return current_score + points
 
     if outcome == "Too High":
-        if attempt_number % 2 == 0:
-            return current_score + 5
+        # FIX: Fixes for points being added instead of subtracted for wrong guesses on even tries.
+        # if attempt_number % 2 == 0:
+        #     return current_score + 5
         return current_score - 5
 
     if outcome == "Too Low":
